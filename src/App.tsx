@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import ParamEditor from './ParamEditor';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	console.log(
+		new ParamEditor({
+			params: [
+				{ id: 1, name: 'Назначение', type: 'text' },
+				{ id: 2, name: 'Длина', type: 'text' },
+				{ id: 3, name: 'Длина2', type: 'number' },
+			],
+			model: {
+				paramValues: [
+					{ paramId: 1, value: 'повседневное' },
+					{ paramId: 2, value: 'макси' },
+				],
+			},
+		}).getModel(),
+	);
+	return (
+		<div className="App">
+			<ParamEditor
+				params={[
+					{ id: 1, name: 'Назначение', type: 'text' },
+					{ id: 2, name: 'Длина', type: 'text' },
+					{ id: 3, name: 'Длина2', type: 'number' },
+				]}
+				model={{
+					paramValues: [
+						{ paramId: 1, value: 'повседневное' },
+						{ paramId: 2, value: 'макси' },
+					],
+				}}
+			/>
+		</div>
+	);
 }
 
 export default App;
