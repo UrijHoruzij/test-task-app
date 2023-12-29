@@ -7,7 +7,6 @@ function App() {
 			params: [
 				{ id: 1, name: 'Назначение', type: 'text' },
 				{ id: 2, name: 'Длина', type: 'text' },
-				{ id: 3, name: 'Длина2', type: 'number' },
 			],
 			model: {
 				paramValues: [
